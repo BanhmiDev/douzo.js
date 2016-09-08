@@ -1,0 +1,39 @@
+.demo {
+    display: inline-block;
+    margin: 25px 0 8px 0;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+a {
+    font-size: 18px;
+    color: #13181F;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+pre, code {
+    display: block;
+    font-size: 14px !important;
+    border-radius: 2px;
+}
+
+footer {
+    display: block;
+    margin: 20px 0 0 0;
+    width: 100%;
+    background: #121621;
+}
+
+footer p {
+    font-size: 12px;
+    color: #fff;
+    padding: 20px;
+}
+
+footer a {
+    font-size: 12px;
+    color: #fff;
+}

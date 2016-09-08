@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>douzo.js</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+
+  <link rel="stylesheet" href="dist/douzo.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="dist/douzo.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+<a href="https://github.com/gimu/douzo.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>douzo.js</h1>
+          <p>Simple and minimalistic modal plugin for jQuery</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/gimu">gimu</a></span>
+          <span class="credits right">This project is released under the terms of the MIT license.</span>
+        </div>
+
+        <p>douzo.js is a lightweight and beautiful jQuery modal plugin dedicated to show content in a simple way. It provides various options ranging from prompt, alert to confirm-forms and also includes ajax/media capabilities.</p>
+
+<pre><code>$ git@github.com:gimu/douzo.js.git</code></pre>
+
+        <h2>Usage</h2>
+<p>Extract the respective files (douzo.min.js and douzo.min.css for a minified version) and refer to them.</p>
+<div class="highlight"><pre><code>&lt;<span class="o">link</span> <span class="s">rel</span>=<span class="k">"stylesheet"</span> <span class="s">href</span>=<span class="k">"path/to/douzo.min.css"</span>&gt;
+&lt;<span class="o">script</span> <span class="s">src</span>=<span class="k">"path/to/douzo.min.js"</span>&gt;&lt;/<span class="o">script</span>&gt;
+</code></pre></div>
+
+        <h2>Calls</h2>
+        <p>Click on the respective header to try it out!</p>
+<h3><a href="javascript:void(0)" onclick="new Douzo('Here goes your content!');">Basic Call</a></h3>
+<div class="highlight">
+<pre><code><span class="s">new</span> Douzo('<span class="k">Here goes your content!</span>');
+</code></pre>
+</div>
+
+<h3><a href="javascript:void(0)" onclick="Douzo.notify('This is a notification!', null, {title: 'Notification'});">Notification Extension</a></h3>
+<p>Autocloses after 2.5 seconds.</p>
+<div class="highlight">
+<pre><code>Douzo.notify('<span class="k">This is a notification!</span>', null, {title: '<span class="k">Notification</span>'});
+</code></pre>
+</div>
+
+<h3><a href="javascript:void(0)" onclick="Douzo.alert('This is an alert form!');">Alert Extension</a></h3>
+<p>Includes button and alert icon.</p>
+<div class="highlight">
+<pre><code>Douzo.alert('<span class="k">This is an alert form!</span>');
+</code></pre>
+</div>
+
+<h3><a href="javascript:void(0)" onclick="Douzo.confirm('This is a confirmation form!');">Confirm Extension</a></h3>
+<p>Includes confirm and cancel button.</p>
+<div class="highlight">
+<pre><code>Douzo.confirm('<span class="k">This is a confirmation form!</span>');
+</code></pre>
+</div>
+
+<h3><a href="javascript:void(0)" onclick="Douzo.prompt('Here goes your content.', function(val, str) {alert('Button: ' + val + '\nInput: ' + str)}, {title:'custom title'});">Prompt Extension</a></h3>
+<p>Includes input field, submit and cancel button.<br/>Callback example in the following code.</p>
+<div class="highlight">
+<pre><code>Douzo.prompt('<span class="k">Here goes your content.</span>', function(val, str) {alert('<span class="k">Button: </span>' + val + '<span class="k">\nInput: </span>' + str)}, {title:'<span class="k">custom title</span>'});
+</code></pre>
+</div>
+
+<h3><a href="javascript:void(0)" onclick="Douzo.ajax('ajax.php', {params: {name: 'test'}});">Ajax Extension</a></h3>
+<p>Ajax call with parameter options.</p>
+<div class="highlight">
+<pre><code>Douzo.ajax('<span class="k">ajax.php</span>', {params: {name: '<span class="k">test</span>'}});
+</code></pre>
+</div>
+
+<h3><a href="javascript:void(0)" onclick="Douzo.img('street.jpg', {title: 'An Image', width: '300'});">Image Extension</a></h3>
+<p>Image display with optional width/height arguments.</p>
+<div class="highlight">
+<pre><code>Douzo.img('<span class="k">street.jpg</span>', {title: '<span class="k">An Image</span>', width: '<span class="k">300</span>'});
+</code></pre>
+</div>
+
+<h3><a href="javascript:void(0)" onclick="new Douzo('custom content',{title: 'custom title', buttons: [{label: 'Yes', val: 'yes', classname: 'douzo-success'},{label: 'No', val: 'no', classname: 'douzo-danger'},{label: 'Cancel', val: 'cancel', classname: 'douzo-default'}], callback: function(val) {alert(val);}});">Custom Settings</a></h3>
+<p>Custom buttons and callback example.</p>
+<div class="highlight">
+<pre><code><span class="s">new</span> Douzo('<span class="k">custom content</span>', {title: '<span class="k">custom title</span>', buttons: [
+    {label: '<span class="k">Yes</span>', val: '<span class="k">yes</span>', classname: '<span class="k">douzo-success</span>'},
+    {label: '<span class="k">No</span>', val: '<span class="k">no</span>', classname: '<span class="k">douzo-danger</span>'},
+    {label: '<span class="k">Cancel</span>', val: '<span class="k">cancel</span>', classname: '<span class="k">douzo-default</span>'}], callback: function(val) {
+        alert(val);
+    }
+});
+</code></pre>
+</div>
+
+<h2>Options</h2>
+<p>A small overview of available options.</p>
+
+<ul>
+<li><code class="small-code">width</code> <code class="small-code">'auto'</code>: custom width</li>
+<li><code class="small-code">height</code> <code class="small-code">'auto'</code>: custom height</li>
+<li><code class="small-code">viewport</code> <code class="small-code">{top: '0px', left: '0px'}</code>: viewport position</li>
+<li><code class="small-code">buttons</code> <code class="small-code">[]</code>: array of json structured buttons</li>
+<li><code class="small-code">center</code> <code class="small-code">true</code>: center dialog</li>
+<li><code class="small-code">title</code> <code class="small-code">null</code>: title heading</li>
+<li><code class="small-code">titleClass</code> <code class="small-code">null</code>: custom title class</li>
+<li><code class="small-code">position</code> <code class="small-code">fixed</code>: dialog position (choose between fixed and absolute)</li>
+<li><code class="small-code">modal</code> <code class="small-code">true</code>: activate or disable overlay</li>
+<li><code class="small-code">modalOpacity</code> <code class="small-code">0.5</code>: overlay opacity</li>
+<li><code class="small-code">modalClick</code> <code class="small-code">false</code>: overlay click behaviour</li>
+<li><code class="small-code">padding</code> <code class="small-code">15px 10px 5px</code>: content padding</li>
+<li><code class="small-code">unload</code> <code class="small-code">true</code>: unload the dialog from DOM</li>
+<li><code class="small-code">autoclose</code> <code class="small-code">null</code>: autoclose after x milliseconds</li>
+<li><code class="small-code">callback</code> <code class="small-code">null</code>: custom callback function</li>
+</ul>
+
+<h2>Requirements</h2>
+<p>jQuery version 1.7+ and Font Awesome (currently included)</p>
+
+      </section>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>

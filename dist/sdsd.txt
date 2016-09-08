@@ -1,0 +1,4 @@
+// Be IE friendly
+if (typeof window.console === 'object') {
+console.log(request.responseText);
+}

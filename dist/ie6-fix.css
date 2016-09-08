@@ -1,0 +1,9 @@
+.douzo-modal {
+    position: absolute !important;
+    top:expression(eval(document.documentElement.scrollTop)) !important;
+}
+
+.douzo {
+    position: absolute !important;
+    top:expression(eval(document.documentElement.scrollTop)) !important;
+}
